@@ -1,0 +1,83 @@
+[versions]
+agp = "8.8.0"
+browser = "1.8.0"
+coreTesting = "2.2.0"
+kotlin = "2.1.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kotlinxCoroutinesTest = "1.9.0"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.2.0"
+jetbrainsKotlinJvm = "2.1.0"
+mockk = "1.13.16"
+retrofit = "2.11.0"
+retrofit-adapter = "1.0.11"
+kotlinx-serialization-json = "1.7.1"
+moshi = "1.15.1"
+kotlin-serialization = "2.0.0"
+logging-interceptor = "4.12.0"
+fragment = "1.8.5"
+coil = "3.0.4"
+recyclerView = "1.3.2"
+dagger = "2.51.1"
+navigation = "2.8.5"
+navigationCommonKtx = "2.8.5"
+robolectric = "4.10.3"
+turbine = "0.12.0"
+work-manager = "2.10.0"
+hilt-work = "1.2.0"
+playServicesPhenotype = "17.0.0"
+ksp = "2.1.0-1.0.28"
+navigationRuntimeKtx = "2.8.5"
+
+[libraries]
+androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "hilt-work" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-work" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
+retrofit-adapter = { module = "com.github.skydoves:retrofit-adapters-result", version.ref = "retrofit-adapter"}
+kotlinx-serialization = {module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json"}
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "logging-interceptor" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi"}
+moshi-kotlin = {module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi"}
+moshi-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit"}
+fragment-kotlin = {module = "androidx.fragment:fragment-ktx", version.ref = "fragment"}
+coil = {module = "io.coil-kt.coil3:coil", version.ref = "coil"}
+coil-okhttp = {module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil"}
+recyclerview = {module = "androidx.recyclerview:recyclerview",version.ref = "recyclerView"}
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
+navigation-fragment = {module = "androidx.navigation:navigation-fragment-ktx",version.ref="navigation"}
+navigation-ui = {module = "androidx.navigation:navigation-ui-ktx",version.ref="navigation"}
+androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "navigationCommonKtx" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+work-manager = { module = "androidx.work:work-runtime-ktx",version.ref="work-manager"}
+hilt-work = { module = "androidx.hilt:hilt-work",version.ref="hilt-work"}
+play-services-phenotype = { group = "com.google.android.gms", name = "play-services-phenotype", version.ref = "playServicesPhenotype" }
+androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+kotlinSerializaiton = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization"}
+android-library = { id = "com.android.library", version.ref = "agp" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger"}
+safeargs = {id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation"}
+ksp= {id = "com.google.devtools.ksp", version.ref = "ksp"}

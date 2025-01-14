@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/photoAuthorizationFragment">
+
+    <fragment
+        android:id="@+id/photoAuthorizationFragment"
+        android:name="com.example.authorization.ui.PhotoAuthorizationFragment"
+        android:label="PhotoAuthorizationFragment" />
+
+
+    <fragment
+        android:id="@+id/randomPhotoFragment"
+        android:name="com.example.photos_random.ui.RandomPhotoFragment"
+        android:label="RandomPhotoFragment">
+    <deepLink
+        app:uri="android-app://com.example.photos_random.ui"/>
+    </fragment>
+
+    <include app:graph="@navigation/nav_random"/>
+</navigation>

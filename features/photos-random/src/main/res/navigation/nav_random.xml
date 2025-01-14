@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_random"
+    app:startDestination="@id/randomPhotoFragment">
+
+    <fragment
+        android:id="@+id/randomPhotoFragment"
+        android:name="com.example.photos_random.ui.RandomPhotoFragment"
+        android:label="fragment_random_photo"
+        tools:layout="@layout/fragment_random_photo">
+        <deepLink
+            app:uri="android-app://com.example.photos_random/randomPhoto" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoDetailsFragment"
+        android:name="com.example.photos_details.ui.PhotoDetailsFragment"
+        android:label="PhotoDetailsFragment" >
+    <argument
+        android:name="itemId"
+        android:defaultValue="0"
+        app:argType="string"/>
+    <deepLink
+        app:uri="android-app://com.example.photos_details.ui/{itemId}"/>
+    </fragment>
+</navigation>

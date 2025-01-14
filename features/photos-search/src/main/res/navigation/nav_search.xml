@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_search"
+    app:startDestination="@id/searchPhotosFragment">
+
+    <fragment
+        android:id="@+id/searchPhotosFragment"
+        android:name="com.example.photos.search.ui.SearchPhotosFragment"
+        android:label="fragment_photos_search"
+        tools:layout="@layout/fragment_photos_search" />
+
+    <fragment
+        android:id="@+id/photoDetailsFragment"
+        android:name="com.example.photos_details.ui.PhotoDetailsFragment"
+        android:label="PhotoDetailsFragment" >
+
+    </fragment>
+</navigation>

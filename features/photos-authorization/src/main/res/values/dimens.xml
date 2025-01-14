@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_widt">100dp</dimen>
+    <dimen name="logo_height">100dp</dimen>
+    <dimen name="login_desc_size">16sp</dimen>
+    <dimen name="login_desc_margin_top">16dp</dimen>
+    <dimen name="login_margin_bottom">16dp</dimen>
+    <dimen name="progress_bar_margin_top">16dp</dimen>
+    <dimen name="linear_container_padding">16dp</dimen>
+</resources>

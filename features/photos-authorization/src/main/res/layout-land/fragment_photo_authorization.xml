@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/linear_container_padding"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="@dimen/logo_widt"
+        android:layout_height="@dimen/logo_height"
+        android:src="@drawable/unsplash"
+        android:contentDescription="@string/unsplash_logo"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_description"
+        android:textSize="@dimen/login_desc_size"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/login_desc_margin_top"
+        android:layout_marginBottom="@dimen/login_margin_bottom" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_with_unsplash"
+        android:backgroundTint="#000000"
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/progress_bar_margin_top" />
+
+    <EditText
+        android:id="@+id/codeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter authorization code"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/submitCodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Code" />
+
+</LinearLayout>

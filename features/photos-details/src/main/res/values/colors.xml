@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#F9F9F9</color> <!-- Светлый фон -->
+    <color name="text_primary">#212121</color> <!-- Основной цвет текста -->
+    <color name="text_secondary">#757575</color> <!-- Второстепенный цвет текста -->
+    <color name="accent_color">#FF4081</color>
+    <color name = "cream">#FFFDD0</color>
+    <color name = "gray">#C6C3B5</color>
+</resources>

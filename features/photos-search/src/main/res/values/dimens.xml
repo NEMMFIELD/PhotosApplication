@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="container_padding">10dp</dimen>
+    <dimen name="recycler_margin">10dp</dimen>
+    <dimen name="constraint_container_padding">16dp</dimen>
+    <dimen name="constraint_container_land_width">300dp</dimen>
+    <dimen name="constraint_container_margin">8dp</dimen>
+    <dimen name="consraint_container_elevation">4dp</dimen>
+    <dimen name="random_description_margin_top">5dp</dimen>
+    <dimen name="random_desc_text_size">14sp</dimen>
+    <dimen name="line_spacing_extra">4dp</dimen>
+    <dimen name="random_desc_padding">8dp</dimen>
+    <dimen name="random_image_width">180dp</dimen>
+    <dimen name="random_land_image_width">200dp</dimen>
+    <dimen name="random_image_height">180dp</dimen>
+    <dimen name="random_image_margin_top">12dp</dimen>
+    <dimen name="random_image_margin_bottom">12dp</dimen>
+    <dimen name="random_elevation">6dp</dimen>
+    <dimen name="margin_image_start_end">8dp</dimen>
+</resources>

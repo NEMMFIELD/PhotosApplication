@@ -1,0 +1,16 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Unsplash Auth App</string>
+    <string name="unsplash_logo">Unsplash Logo</string>
+
+    <!-- Строки для авторизации -->
+    <string name="auth_description">Войдите через Unsplash, чтобы сохранять избранное и управлять своими фотографиями.</string>
+    <string name="login_with_unsplash">Войти через Unsplash</string>
+
+    <!-- Сообщения для пользователя -->
+    <string name="auth_success">Авторизация успешна!</string>
+    <string name="auth_error">Ошибка авторизации.</string>
+    <string name="enter_authorization_code">Enter authorization code</string>
+    <string name="submit_code">Submit Code</string>
+</resources>

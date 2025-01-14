@@ -1,0 +1,15 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="downloads_format">downloads:%d</string>
+    <string name="likes_format">likes:%d</string>
+    <string name="location_format">location:%s</string>
+    <string name="photo_description">Description of the photo</string>
+    <string name="liked_user">Liked by user</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="photo">Photo</string>
+    <string name="description">Description</string>
+    <string name="count_likes">Count likes</string>
+    <string name="count_downloads">Count downloads</string>
+    <string name="location">Location</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Основные цвета -->
+    <color name="primaryColor">#000000</color> <!-- Чёрный (или замените на ваш цвет) -->
+    <color name="secondaryColor">#FFFFFF</color> <!-- Белый -->
+    <color name="backgroundColor">#F5F5F5</color> <!-- Светло-серый -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- Белый -->
+
+    <!-- Дополнительные цвета -->
+    <color name="progressBarColor">#6200EE</color> <!-- Фиолетовый (или ваш выбор) -->
+</resources>
