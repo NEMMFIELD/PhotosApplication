@@ -1,6 +1,7 @@
 package com.example.photos.search.ui
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -73,8 +74,11 @@ class SearchPhotosFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
+        val spanCount = if (activity?.resources?.configuration?.orientation !=
+            Configuration.ORIENTATION_PORTRAIT
+        ) 3 else 2
         searchRecyclerView = binding.searchPhotosRecyclerView
-        searchRecyclerView?.layoutManager = GridLayoutManager(requireContext(), 2)
+        searchRecyclerView?.layoutManager = GridLayoutManager(requireContext(), spanCount)
         searchPhotosAdapter = SearchPhotosAdapter() { itemId ->
             val request = NavDeepLinkRequest.Builder
                 .fromUri(requireContext().getString(R.string.nav_deep_link_details, itemId).toUri())
