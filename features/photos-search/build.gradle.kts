@@ -62,4 +62,12 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":features:photos-details"))
     implementation(project(":core:utils"))
+
+    testImplementation(libs.junit)
+    testImplementation (libs.mockk)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.robolectric)
+    testImplementation(kotlin("test"))
+    testImplementation (libs.turbine)
 }

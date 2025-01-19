@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/constraint_container_padding"
-    android:layout_width="@dimen/constraint_container_land_width"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="?android:attr/windowBackground"
     android:layout_margin="@dimen/constraint_container_margin"
@@ -12,7 +12,7 @@
     <!-- Text description with improved readability -->
     <TextView
         android:id="@+id/random_photo_description"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/random_description_margin_top"
         android:textSize="@dimen/random_desc_text_size"

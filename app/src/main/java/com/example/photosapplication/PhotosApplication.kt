@@ -12,6 +12,7 @@ import dagger.hilt.EntryPoints
 import dagger.hilt.InstallIn
 import dagger.hilt.android.HiltAndroidApp
 import dagger.hilt.components.SingletonComponent
+import leakcanary.LeakCanary
 
 @HiltAndroidApp
 class PhotosApplication : Application(), Configuration.Provider {

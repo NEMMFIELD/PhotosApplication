@@ -7,11 +7,13 @@
     <dimen name="details_desc_text_size">18sp</dimen>
     <dimen name="details_image_margin_top">10dp</dimen>
     <dimen name="count_downloads_margin_start">3dp</dimen>
-    <dimen name="liked_by_user_width">31dp</dimen>
-    <dimen name="liked_by_user_height">31dp</dimen>
+    <dimen name="liked_by_user_width">33dp</dimen>
+    <dimen name="liked_by_user_height">33dp</dimen>
     <dimen name="liked_by_user_margin_top">5dp</dimen>
     <dimen name="portfolio_margin_top">20dp</dimen>
-    <dimen name="portfolio_text_size">17sp</dimen>
+    <dimen name="portfolio_text_size">16sp</dimen>
     <dimen name="constraint_padding">10dp</dimen>
     <dimen name="toolbar_land_text_size">23sp</dimen>
+    <dimen name="btn_download_margin_top">7dp</dimen>
+    <dimen name="btn_dowload_margin_start">50dp</dimen>
 </resources>

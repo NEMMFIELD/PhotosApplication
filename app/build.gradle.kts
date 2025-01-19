@@ -69,11 +69,15 @@ dependencies {
     // WorkManager
     implementation(libs.work.manager)
 
+    //leak canary
+    debugImplementation(libs.leak.canary)
+
     // Project dependencies
     implementation(project(":features:photos-random"))
     implementation(project(":features:photos-details"))
     implementation(project(":features:photos-authorization"))
     implementation(project(":features:photos-search"))
+    implementation(project(":features:photos-users"))
     implementation(project(":core:photos-api"))
     implementation(project(":core:navigation"))
     implementation(project(":core:workmanager"))

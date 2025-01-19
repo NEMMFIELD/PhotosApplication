@@ -9,8 +9,9 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 kotlinxCoroutinesTest = "1.10.1"
+localbroadcastmanagerVersion = "1.1.0"
 material = "1.12.0"
-activity = "1.9.3"
+activity = "1.10.0"
 constraintlayout = "2.2.0"
 jetbrainsKotlinJvm = "2.1.0"
 mockk = "1.13.16"
@@ -22,7 +23,7 @@ kotlin-serialization = "2.0.0"
 logging-interceptor = "4.12.0"
 fragment = "1.8.5"
 coil = "3.0.4"
-recyclerView = "1.3.2"
+recyclerView = "1.4.0"
 dagger = "2.55"
 navigation = "2.8.5"
 navigationCommonKtx = "2.8.5"
@@ -33,6 +34,7 @@ hilt-work = "1.2.0"
 playServicesPhenotype = "17.0.0"
 ksp = "2.1.0-1.0.28"
 navigationRuntimeKtx = "2.8.5"
+leak-canary = "2.14"
 
 [libraries]
 androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
@@ -40,6 +42,7 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "hilt-work" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-work" }
+androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "localbroadcastmanagerVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -71,6 +74,8 @@ work-manager = { module = "androidx.work:work-runtime-ktx",version.ref="work-man
 hilt-work = { module = "androidx.hilt:hilt-work",version.ref="hilt-work"}
 play-services-phenotype = { group = "com.google.android.gms", name = "play-services-phenotype", version.ref = "playServicesPhenotype" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
+leak-canary = {module = "com.squareup.leakcanary:leakcanary-android",version.ref="leak-canary"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

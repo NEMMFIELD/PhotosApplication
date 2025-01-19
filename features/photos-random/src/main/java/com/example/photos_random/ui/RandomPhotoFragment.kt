@@ -1,5 +1,6 @@
 package com.example.photos_random.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -53,13 +54,15 @@ class RandomPhotoFragment : Fragment() {
             ExistingPeriodicWorkPolicy.KEEP,
             RandomPhotoWorkerRepository().periodicWork
         )
-
     }
 
 
     private fun setupRecyclerView() {
+        val spanCount = if (activity?.resources?.configuration?.orientation !=
+            Configuration.ORIENTATION_PORTRAIT
+        ) 3 else 2
         recyclerView = binding!!.randomPhotoRecyclerView
-        recyclerView?.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView?.layoutManager = GridLayoutManager(requireContext(), spanCount)
         recyclerView?.setHasFixedSize(true)
         randomPhotoAdapter = RandomPhotoAdapter() { itemId ->
             val request = NavDeepLinkRequest.Builder

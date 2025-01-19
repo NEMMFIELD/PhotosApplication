@@ -1,9 +1,11 @@
 package com.example.photos_details.ui
 
+import android.content.ContentResolver
 import android.content.SharedPreferences
 import androidx.lifecycle.SavedStateHandle
 import com.example.photos_details.datali.PhotoDetailsModel
 import com.example.photos_details.domain.DislikePhotoUseCase
+import com.example.photos_details.domain.DownLoadPhotoUseCase
 import com.example.photos_details.domain.GetAccessTokenUseCase
 import com.example.photos_details.domain.LikePhotoUseCase
 import com.example.photos_details.domain.PhotoDetailsUseCase
@@ -43,6 +45,8 @@ class PhotoDetailsViewModelTest {
     private val sharedPreferences: SharedPreferences = mockk()
     private val logger: Logger = mockk(relaxed = true)
     private val savedStateHandle: SavedStateHandle = mockk()
+    private val contentResolver:ContentResolver=mockk()
+    private val downLikePhotoUseCase:DownLoadPhotoUseCase = mockk()
 
     @Before
     fun setUp() {
@@ -54,9 +58,11 @@ class PhotoDetailsViewModelTest {
             likePhotoUseCase,
             dislikePhotoUseCase,
             getAccessTokenUseCase,
+            downLikePhotoUseCase,
             sharedPreferences,
             logger,
-            savedStateHandle
+            savedStateHandle,
+            contentResolver = contentResolver,
         )
     }
 

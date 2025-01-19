@@ -1,5 +1,6 @@
 package com.example.photos_details.domain
 
+import com.example.photos.api.model.DownloadResponse
 import com.example.photos.api.model.LikePhotoResponse
 import com.example.photos.api.model.Photo
 
@@ -8,4 +9,5 @@ internal interface PhotoDetailsRepository {
     suspend fun getAccessToken(clientId: String, clientSecret: String, code: String): String
     suspend fun likePhoto(id: String, ): LikePhotoResponse
     suspend fun dislikePhoto(id: String,): LikePhotoResponse
+    suspend fun downLoadPhoto(id:String):DownloadResponse
 }

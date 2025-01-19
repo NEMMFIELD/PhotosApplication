@@ -87,8 +87,8 @@ class PhotoAuthorizationFragment : Fragment() {
         navController.navigate(uri)
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = PhotoAuthorizationFragment()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

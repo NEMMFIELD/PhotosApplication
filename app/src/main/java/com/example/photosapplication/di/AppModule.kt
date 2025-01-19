@@ -1,5 +1,6 @@
 package com.example.photosapplication.di
 
+import android.content.ContentResolver
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.photos.api.PhotosApi
@@ -27,6 +28,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
     private const val BASE_URL = "https://api.unsplash.com/"
+
+    @Provides
+    fun provideContentResolver(@ApplicationContext context: Context): ContentResolver {
+        return context.contentResolver
+    }
 
     @Singleton
     @Provides

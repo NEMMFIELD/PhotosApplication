@@ -26,7 +26,7 @@
         android:gravity="start|top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="This is a sample description of the searching photo. It can be really long but will be clipped to two lines." />
+         />
 
     <!-- Image with rounded corners and shadow -->
     <ImageView

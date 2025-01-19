@@ -9,3 +9,8 @@ plugins {
     alias(libs.plugins.safeargs) apply false
     alias(libs.plugins.ksp) apply false
 }
+buildscript {
+    repositories {
+        google()
+    }
+}

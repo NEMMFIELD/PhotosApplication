@@ -22,8 +22,14 @@
         android:name="com.example.photos.search.ui.SearchPhotosFragment"
         android:label="SearchPhotosFragment" />
 
+    <fragment
+        android:id="@+id/userPhotosFragment"
+        android:name="com.example.photos_users.ui.UserPhotosFragment"
+        android:label="UserPhotosFragment" />
+
     <include app:graph="@navigation/nav_login" />
     <include app:graph="@navigation/nav_random" />
     <include app:graph="@navigation/nav_details" />
     <include app:graph="@navigation/nav_search" />
+    <include app:graph="@navigation/user_nav_graph" />
 </navigation>

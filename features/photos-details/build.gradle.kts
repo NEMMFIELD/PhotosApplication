@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.okhttp)
     implementation(libs.androidx.browser)
-
+    implementation (libs.androidx.localbroadcastmanager)
     //dagger
     implementation(libs.dagger.hilt.android)
     ksp(libs.dagger.hilt.compiler)
@@ -61,6 +61,7 @@ dependencies {
     implementation(project(":core:photos-api"))
     implementation(project(":core:state"))
     implementation(project(":core:utils"))
+    implementation(project(":features:photos-users"))
 
     testImplementation(libs.junit)
     testImplementation (libs.mockk)

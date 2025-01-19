@@ -2,6 +2,7 @@ package com.example.photos.api
 
 
 import com.example.photos.api.model.AccessTokenResponse
+import com.example.photos.api.model.DownloadResponse
 import com.example.photos.api.model.LikePhotoResponse
 import com.example.photos.api.model.Photo
 import com.example.photos.api.model.SearchPhotosResponse
@@ -31,6 +32,13 @@ interface PhotosApi {
 
     @GET("photos/{id}")
     suspend fun getPhoto(@Path("id") id: String): Photo
+
+    @GET("photos/{id}/download")
+    suspend fun downloadPhoto(@Path("id")id:String):DownloadResponse
+
+    @GET("users/{username}/photos")
+    suspend fun getUserPhotos(@Path("username")username:String):List<Photo>
+
 
     @POST("photos/{id}/like")
     suspend fun likePhoto(

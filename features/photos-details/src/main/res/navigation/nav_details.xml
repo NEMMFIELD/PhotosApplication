@@ -10,4 +10,21 @@
         android:name="com.example.photos_details.ui.PhotoDetailsFragment"
         android:label="fragment_photo_details"
         tools:layout="@layout/fragment_photo_details" />
+
+    <fragment
+        android:id="@+id/userPhotosFragment"
+        android:name="com.example.photos_users.ui.UserPhotosFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <argument
+            android:name="username"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string"/>
+        <deepLink
+            app:uri="android-app://com.example.photos_users.ui/{username}/{name}"/>
+    </fragment>
 </navigation>

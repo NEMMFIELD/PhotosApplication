@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/constraint_padding"
@@ -123,6 +123,38 @@
         android:autoLink="web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_downloads" />
+        app:layout_constraintTop_toBottomOf="@+id/user" />
+
+    <ImageButton
+        android:id="@+id/download_photo_img"
+        android:layout_width="@dimen/liked_by_user_width"
+        android:layout_height="@dimen/liked_by_user_height"
+        android:src="@drawable/downloadicon"
+        android:background="@android:color/transparent"
+        android:foreground="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:layout_marginTop="@dimen/btn_download_margin_top"
+        app:layout_constraintEnd_toEndOf="@id/details_liked_user"
+        app:layout_constraintTop_toBottomOf="@+id/details_liked_user" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/portfolio_margin_top"
+        android:text="@string/user"
+        android:clickable="true"
+        android:focusable="true"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:background="?attr/selectableItemBackground"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/details_location"
+        app:layout_constraintTop_toBottomOf="@id/details_location"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

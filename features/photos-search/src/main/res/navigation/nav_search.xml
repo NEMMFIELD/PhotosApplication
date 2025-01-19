@@ -15,6 +15,5 @@
         android:id="@+id/photoDetailsFragment"
         android:name="com.example.photos_details.ui.PhotoDetailsFragment"
         android:label="PhotoDetailsFragment" >
-
     </fragment>
 </navigation>

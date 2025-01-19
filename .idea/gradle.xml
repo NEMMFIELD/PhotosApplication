@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/features/photos-details" />
             <option value="$PROJECT_DIR$/features/photos-random" />
             <option value="$PROJECT_DIR$/features/photos-search" />
+            <option value="$PROJECT_DIR$/features/photos-users" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

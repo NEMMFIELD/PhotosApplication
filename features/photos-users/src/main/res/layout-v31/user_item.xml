@@ -1,0 +1,44 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/constraint_container_margin"
+    android:background="?android:attr/windowBackground"
+    android:elevation="@dimen/consraint_container_elevation"
+    android:padding="@dimen/constraint_container_padding">
+
+
+    <TextView
+        android:id="@+id/user_photo_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/random_description_margin_top"
+        android:background="@drawable/text_background"
+        android:ellipsize="end"
+        android:gravity="start|top"
+        android:lineSpacingExtra="@dimen/line_spacing_extra"
+        android:maxLines="2"
+        android:padding="@dimen/random_desc_padding"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/random_desc_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Image with rounded corners and shadow -->
+    <ImageView
+        android:id="@+id/user_photo_image"
+        android:layout_width="@dimen/random_image_width"
+        android:layout_height="@dimen/random_image_height"
+        android:layout_marginStart="@dimen/margin_image_start_end"
+        android:layout_marginTop="@dimen/random_image_margin_top"
+        android:layout_marginEnd="@dimen/margin_image_start_end"
+        android:layout_marginBottom="@dimen/random_image_margin_bottom"
+        android:clipToOutline="true"
+        android:elevation="@dimen/random_elevation"
+        android:outlineProvider="background"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_photo_description"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>

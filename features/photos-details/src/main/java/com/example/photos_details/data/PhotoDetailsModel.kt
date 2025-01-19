@@ -1,6 +1,7 @@
 package com.example.photos_details.datali
 
 import android.os.Parcelable
+import com.example.photos.api.model.User
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
@@ -13,6 +14,8 @@ data class PhotoDetailsModel(
     val likes: Int?,
     val likedByUser: Boolean?,
     val userPortfolio: @RawValue Any? = "",
-    val location: @RawValue Any? = null
+    val location: @RawValue Any? = null,
+    val userName:String? = null, //переменная никнейма пользователя
+    val name:String? = null //переменная имени пользователя
 ) : Parcelable
 

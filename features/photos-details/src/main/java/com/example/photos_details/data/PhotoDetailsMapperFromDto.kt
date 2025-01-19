@@ -8,13 +8,15 @@ class PhotoDetailsMapperFromDto {
         fun mapDtoToDetailsModel(randomPhotoDto: Photo): PhotoDetailsModel {
             return PhotoDetailsModel(
                 id = randomPhotoDto.id,
-                description = randomPhotoDto.altDescription,
+                description = randomPhotoDto.altDescription ?: "No description",
                 pathUrl = randomPhotoDto.urls?.regular,
                 downloads = randomPhotoDto.downloads,
                 likes = randomPhotoDto.likes,
                 likedByUser = randomPhotoDto.likedByUser,
                 userPortfolio = randomPhotoDto.user?.portfolioUrl ?: "No portfolio",
-                location = randomPhotoDto.user?.location ?: "No location"
+                location = randomPhotoDto.user?.location ?: "No location",
+                userName = randomPhotoDto.user?.username,
+                name = randomPhotoDto.user?.name
             )
         }
     }

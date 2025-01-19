@@ -1,5 +1,6 @@
 package com.example.photos_details.data
 import com.example.photos.api.PhotosApi
+import com.example.photos.api.model.DownloadResponse
 import com.example.photos.api.model.LikePhotoResponse
 import com.example.photos.api.model.Photo
 import com.example.photos_details.domain.PhotoDetailsRepository
@@ -30,5 +31,9 @@ internal class PhotoDetailsRepositoryImpl @Inject constructor(private val api: P
     override suspend fun dislikePhoto(id: String): LikePhotoResponse {
         val response = api.dislikePhoto(id)
         return response
+    }
+
+    override suspend fun downLoadPhoto(id: String): DownloadResponse {
+        return api.downloadPhoto(id)
     }
 }

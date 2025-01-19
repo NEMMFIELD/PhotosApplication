@@ -1,0 +1,7 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo">Photo</string>
+    <string name="user">User</string>
+    <string name = "nav_deep_link">android-app://com.example.photos_details.ui/%1$s </string>
+</resources>
