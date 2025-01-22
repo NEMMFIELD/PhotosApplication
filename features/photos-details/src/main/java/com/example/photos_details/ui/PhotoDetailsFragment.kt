@@ -160,6 +160,7 @@ class PhotoDetailsFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        receiver.clearRootView()
         localBroadcastManager.unregisterReceiver(receiver)
         _binding = null
         collectPhotoDetailsJob?.cancel()  // Отмена сбора данных
