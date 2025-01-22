@@ -9,7 +9,7 @@ import android.widget.ScrollView
 import com.google.android.material.snackbar.Snackbar
 import java.lang.ref.WeakReference
 
-class PhotoDownloadReceiver(private val rootView: View) : BroadcastReceiver() {
+class PhotoDownloadReceiver() : BroadcastReceiver() {
     private var rootViewReference: WeakReference<ScrollView>? = null
     fun setRootView(rootView: ScrollView) {
         rootViewReference = WeakReference(rootView)

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -41,11 +42,14 @@ class PhotoDetailsFragment : Fragment() {
     ): View {
         _binding = FragmentPhotoDetailsBinding.inflate(inflater, container, false)
         val view = binding?.root
-        receiver = PhotoDownloadReceiver(view as View)
+        receiver = PhotoDownloadReceiver()
+        if (view != null) {
+            receiver.setRootView(view)
+        }
         localBroadcastManager = LocalBroadcastManager.getInstance(requireContext())
         val intentFilter = IntentFilter("com.example.LOCAL_DOWNLOAD_COMPLETE")
         localBroadcastManager.registerReceiver(receiver, intentFilter)
-        return view
+        return view as ScrollView
     }
 
 
