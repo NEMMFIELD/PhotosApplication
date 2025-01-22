@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class GetUserPhotosUseCase @Inject constructor(private val repository: UserPhotosRepository) {
-    fun execute(username: String?): Flow<List<UserPhotosModel>?> = flow {
-        val response = repository.getUserPhotos(username)
-        val userPhotos = response?.map { photoDto ->
+    fun execute(username: String?,page:Int): Flow<List<UserPhotosModel>> = flow {
+        val response = repository.getUserPhotos(username,page)
+        val userPhotos = response.map { photoDto ->
             UserPhotosMapperFromDto.mapDtoToModel(photoDto)
         }
         emit(userPhotos)

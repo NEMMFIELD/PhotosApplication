@@ -4,10 +4,25 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class UserPhotosModel(
+ data class UserPhotosModel(
     val photoId: String?,
     val photoDescription: String?,
     val pathUrl: String?,
     val userName: String,
     val name:String
-) : Parcelable
+) : Parcelable {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is UserPhotosModel) return false
+
+        return photoId == other.photoId &&
+                pathUrl == other.pathUrl &&
+                photoDescription == other.photoDescription
+    }
+
+    override fun hashCode(): Int {
+        return photoId.hashCode() * 31 +
+                pathUrl.hashCode() * 31 +
+                photoDescription.hashCode()
+    }
+}

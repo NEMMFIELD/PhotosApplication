@@ -53,7 +53,7 @@ class PhotoAuthorizationFragment : Fragment() {
                     "android-app://com.example.photos_random.ui"
                 )
             } else {
-                Toast.makeText(context, "Code cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Code cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -88,7 +88,7 @@ class PhotoAuthorizationFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 }

@@ -53,10 +53,23 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.dagger.hilt.android)
+    testImplementation(project(":features:photos-details"))
+    testImplementation(project(":features:photos-details"))
+    testImplementation(project(":features:photos-details"))
     ksp(libs.dagger.hilt.compiler)  // KSP для Hilt
     ksp(libs.androidx.hilt.compiler)  // Для работы с Hilt и KSP
 
     testImplementation(libs.junit)
     implementation(project(":core:photos-api"))
     implementation(project(":core:state"))
+    implementation(project(":core:utils"))
+
+
+    testImplementation(libs.junit)
+    testImplementation (libs.mockk)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.robolectric)
+    testImplementation(kotlin("test"))
+    testImplementation (libs.turbine)
 }

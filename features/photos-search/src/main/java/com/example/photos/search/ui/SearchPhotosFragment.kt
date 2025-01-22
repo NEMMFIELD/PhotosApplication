@@ -97,7 +97,7 @@ class SearchPhotosFragment : Fragment() {
                     when (state) {
                         is State.Success -> {
                             searchPhotosAdapter?.submitList(state.data)
-                            searchPhotosAdapter?.notifyDataSetChanged()
+                           // searchPhotosAdapter?.notifyDataSetChanged()
                         }
 
                         is State.Failure -> {
@@ -117,6 +117,7 @@ class SearchPhotosFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        searchRecyclerView?.clearOnScrollListeners()
         _binding = null
         searchRecyclerView = null
         searchPhotosAdapter = null

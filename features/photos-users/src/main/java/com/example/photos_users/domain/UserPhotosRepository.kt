@@ -4,5 +4,5 @@ import com.example.photos.api.model.Photo
 
 
 interface UserPhotosRepository {
-   suspend fun getUserPhotos(username:String?):List<Photo>?
+   suspend fun getUserPhotos(username:String?,page:Int):List<Photo>
 }

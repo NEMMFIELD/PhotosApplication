@@ -29,7 +29,7 @@ class UserPhotosFragment : Fragment() {
     private val binding get() = _binding!!
     private var userPhotosRecyclerView: RecyclerView? = null
     private var userPhotosAdapter: UserPhotosAdapter? = null
-    private val viewModel: UserPhotosViewModel by viewModels()
+    private val userPhotosViewModel: UserPhotosViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -48,10 +48,18 @@ class UserPhotosFragment : Fragment() {
         binding.buttonBackUser.setOnClickListener { findNavController().navigateUp() }
         val uri = requireActivity().intent?.data
         uri?.let {
-            viewModel.name = it.getQueryParameter("name")
-            Log.d("name in fragment user", viewModel.name.toString())
+            userPhotosViewModel.name = it.getQueryParameter("name")
         }
-        binding.toolbarUsername.text = viewModel.name
+        binding.toolbarUsername.text = userPhotosViewModel.name
+
+        userPhotosRecyclerView?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (dy > 0 && !userPhotosViewModel.isLoading && isLastItemVisible(recyclerView)) {
+                    userPhotosViewModel.loadNextPage()
+                }
+            }
+        })
     }
 
     private fun setupRecyclerView() {
@@ -69,10 +77,17 @@ class UserPhotosFragment : Fragment() {
         userPhotosRecyclerView?.adapter = userPhotosAdapter
     }
 
+    private fun isLastItemVisible(recyclerView: RecyclerView): Boolean {
+        val layoutManager = recyclerView.layoutManager as? GridLayoutManager
+        val lastVisibleItemPosition = layoutManager?.findLastVisibleItemPosition() ?: 0
+        val totalItemCount = layoutManager?.itemCount ?: 0
+        return lastVisibleItemPosition >= totalItemCount - 1
+    }
+
     private fun collectUserPhotos() {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.postUserPhotos.collect { state ->
+                userPhotosViewModel.postUserPhotos.collect { state ->
                     when (state) {
                         is State.Success -> {
                             userPhotosAdapter?.submitList(state.data)

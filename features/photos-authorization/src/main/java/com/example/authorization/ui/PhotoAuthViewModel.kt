@@ -20,6 +20,7 @@ class PhotoAuthViewModel @Inject constructor (
     val authState: LiveData<String> get() = _authState
 
     fun authenticate(code: String) {
+        if (code.isBlank()) return
         viewModelScope.launch {
             try {
                 val result = authUseCase.execute(code)
@@ -33,5 +34,9 @@ class PhotoAuthViewModel @Inject constructor (
 
     fun getStoredToken(): String? {
         return authUseCase.getStoredToken()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
     }
 }

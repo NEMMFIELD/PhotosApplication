@@ -19,6 +19,7 @@ import androidx.navigation.fragment.findNavController
 import coil3.load
 import com.example.photos_details.R
 import com.example.photos_details.databinding.FragmentPhotoDetailsBinding
+import com.example.photos_details.datali.PhotoDetailsModel
 import com.example.state.State
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
@@ -117,6 +118,7 @@ class PhotoDetailsFragment : Fragment() {
             }
         }
     }
+
 
     private fun collectDownLoadedPhoto() {
         collectDownloadPhotoJob = viewLifecycleOwner.lifecycleScope.launch {

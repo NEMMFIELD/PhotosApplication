@@ -70,24 +70,18 @@ class SearchPhotosViewModel @Inject constructor(
     }
 
     fun searchPhotos(query: String) {
-        queryFlow.value = query
+        queryFlow.value = query.trim()
     }
 
     fun loadMorePhotos() {
         if (isLoading || queryFlow.value.isEmpty()) return
         isLoading = true
         viewModelScope.launch(coroutineExceptionHandler + Dispatchers.IO) {
-            try {
-                val newPhotos = searchPhotosUseCase.execute(queryFlow.value, ++page).first()
-                if (newPhotos.isNotEmpty()) {
-                    val currentPhotos = (_allPhotos.value as? State.Success)?.data ?: emptyList()
-                    val updatedPhotos = currentPhotos + newPhotos
-                    _allPhotos.value = State.Success(updatedPhotos)
-                }
-            } catch (e: Exception) {
-                _allPhotos.value = State.Failure(e)
-            } finally {
-                isLoading = false
+            val newPhotos = searchPhotosUseCase.execute(queryFlow.value, ++page).first()
+            if (newPhotos.isNotEmpty()) {
+                val currentPhotos = (_allPhotos.value as? State.Success)?.data ?: emptyList()
+                val updatedPhotos = currentPhotos + newPhotos
+                _allPhotos.value = State.Success(updatedPhotos)
             }
         }
     }
