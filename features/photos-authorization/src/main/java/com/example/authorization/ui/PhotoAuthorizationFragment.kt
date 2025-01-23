@@ -9,24 +9,27 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.authorization.R
 import com.example.authorization.databinding.FragmentPhotoAuthorizationBinding
 import com.example.photos_random.BuildConfig
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class PhotoAuthorizationFragment : Fragment() {
     private var _binding: FragmentPhotoAuthorizationBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
     private val photoAuthViewModel: PhotoAuthViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPhotoAuthorizationBinding.inflate(inflater, container, false)
-        val view = binding?.root
+        val view = binding.root
         return view
     }
 
@@ -38,22 +41,27 @@ class PhotoAuthorizationFragment : Fragment() {
                 .show()
             navigateWithDeepLink(findNavController(), "android-app://com.example.photos_random.ui")
         }
-        binding?.btnLogin?.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val authUrl = buildAuthUrl()
             openAuthUrl(authUrl)
         }
         observeViewModel()
 
-        binding?.submitCodeButton?.setOnClickListener {
-            val code = binding?.codeInput?.text.toString()
-            if (code.isNotEmpty()) {
-                photoAuthViewModel.authenticate(code) // Передать код в ViewModel
-                navigateWithDeepLink(
-                    findNavController(),
-                    "android-app://com.example.photos_random.ui"
-                )
-            } else {
-                Toast.makeText(requireContext(), "Code cannot be empty", Toast.LENGTH_SHORT).show()
+        binding.submitCodeButton.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                val code = binding.codeInput.text.toString()
+                if (code.isNotEmpty()) {
+                    photoAuthViewModel.authenticate(code) // Передать код в ViewModel
+                    if (findNavController().currentDestination?.id == R.id.photoAuthorizationFragment) {
+                        navigateWithDeepLink(
+                            findNavController(),
+                            "android-app://com.example.photos_random.ui"
+                        )
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Code cannot be empty", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
     }

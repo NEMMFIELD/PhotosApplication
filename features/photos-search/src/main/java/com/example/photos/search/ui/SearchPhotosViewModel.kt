@@ -52,8 +52,7 @@ class SearchPhotosViewModel @Inject constructor(
                 .distinctUntilChanged()
                 .flatMapLatest { query ->
                     if (query.isNotEmpty()) {
-                        page = 1
-                        _allPhotos.value = State.Empty
+                         page = 1
                         logger.d("Search", "Method executed")
                         searchPhotosUseCase.execute(query, page)
                     } else {
@@ -70,7 +69,8 @@ class SearchPhotosViewModel @Inject constructor(
     }
 
     fun searchPhotos(query: String) {
-        queryFlow.value = query.trim()
+        page = 1
+        queryFlow.value = query
     }
 
     fun loadMorePhotos() {
@@ -82,12 +82,13 @@ class SearchPhotosViewModel @Inject constructor(
                 val currentPhotos = (_allPhotos.value as? State.Success)?.data ?: emptyList()
                 val updatedPhotos = currentPhotos + newPhotos
                 _allPhotos.value = State.Success(updatedPhotos)
+                isLoading = false
             }
         }
     }
 
     override fun onCleared() {
-        super.onCleared()
         _allPhotos.value = State.Empty
+        super.onCleared()
     }
 }

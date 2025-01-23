@@ -67,6 +67,7 @@ class SearchPhotosFragment : Fragment() {
                 val lastVisibleItem = layoutManager?.findLastVisibleItemPosition() ?: 0
                 // Проверка: если до конца списка осталось меньше 5 элементов, загружаем данные
                 if (!searchViewModel.isLoading && lastVisibleItem + 5 >= totalItemCount) {
+                    Log.d("Load more","Executed")
                     searchViewModel.loadMorePhotos()
                 }
             }
@@ -97,7 +98,7 @@ class SearchPhotosFragment : Fragment() {
                     when (state) {
                         is State.Success -> {
                             searchPhotosAdapter?.submitList(state.data)
-                           // searchPhotosAdapter?.notifyDataSetChanged()
+                            searchPhotosAdapter?.notifyDataSetChanged()
                         }
 
                         is State.Failure -> {
