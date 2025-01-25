@@ -52,7 +52,7 @@ class SearchPhotosViewModel @Inject constructor(
                 .distinctUntilChanged()
                 .flatMapLatest { query ->
                     if (query.isNotEmpty()) {
-                         page = 1
+                        page = 1
                         logger.d("Search", "Method executed")
                         searchPhotosUseCase.execute(query, page)
                     } else {

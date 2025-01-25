@@ -100,12 +100,6 @@ class RandomPhotoFragment : Fragment() {
     }
 
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            RandomPhotoFragment()
-    }
-
     override fun onDestroyView() {
         _binding = null
         recyclerView = null

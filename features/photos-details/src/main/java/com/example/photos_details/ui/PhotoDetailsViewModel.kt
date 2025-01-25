@@ -39,7 +39,6 @@ internal class PhotoDetailsViewModel @Inject constructor(
     private val useCase: PhotoDetailsUseCase,
     private val likePhotoUseCase: LikePhotoUseCase,
     private val dislikePhotoUseCase: DislikePhotoUseCase,
-    private val getAccessTokenUseCase: GetAccessTokenUseCase,
     private val downLoadPhotoUseCase: DownLoadPhotoUseCase,
     private val sharedPreferences: SharedPreferences,
     private val logger: Logger,
@@ -84,7 +83,6 @@ internal class PhotoDetailsViewModel @Inject constructor(
                 _postPhoto.value = State.Success(photo)
                 username = photo.userName
                 name = photo.name
-                logger.d("username", username.toString())
             }
         }
     }
@@ -132,9 +130,6 @@ internal class PhotoDetailsViewModel @Inject constructor(
         }
     }
 
-
-    internal suspend fun getAccessKey(clientId: String, secretKey: String, code: String): String =
-        getAccessTokenUseCase.execute(clientId, secretKey, code)
 
     internal fun toggleLike(photoId: String, accessKey: String) {
         viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
