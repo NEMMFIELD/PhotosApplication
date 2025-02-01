@@ -41,12 +41,11 @@ class PhotoDetailsViewModelTest {
     private val useCase: PhotoDetailsUseCase = mockk()
     private val likePhotoUseCase: LikePhotoUseCase = mockk()
     private val dislikePhotoUseCase: DislikePhotoUseCase = mockk()
-    private val getAccessTokenUseCase: GetAccessTokenUseCase = mockk()
     private val sharedPreferences: SharedPreferences = mockk()
     private val logger: Logger = mockk(relaxed = true)
     private val savedStateHandle: SavedStateHandle = mockk()
-    private val contentResolver:ContentResolver=mockk()
-    private val downLikePhotoUseCase:DownLoadPhotoUseCase = mockk()
+    private val contentResolver: ContentResolver = mockk()
+    private val downLikePhotoUseCase: DownLoadPhotoUseCase = mockk()
 
     @Before
     fun setUp() {
@@ -57,12 +56,11 @@ class PhotoDetailsViewModelTest {
             useCase,
             likePhotoUseCase,
             dislikePhotoUseCase,
-            getAccessTokenUseCase,
             downLikePhotoUseCase,
             sharedPreferences,
             logger,
             savedStateHandle,
-            contentResolver = contentResolver,
+            contentResolver,
         )
     }
 
@@ -93,6 +91,7 @@ class PhotoDetailsViewModelTest {
             }
     }
 }
+
 class MainDispatcherRule(
     private val testDispatcher: TestDispatcher = StandardTestDispatcher()
 ) : TestWatcher() {
