@@ -44,7 +44,7 @@ class UserPhotosViewModel @Inject constructor(
      fun loadUserPhotos() {
         if (isLoading || isLastPage) return // Проверка на загрузку или последнюю страницу
         isLoading = true
-        viewModelScope.launch(coroutineExceptionHandler + Dispatchers.IO) {
+        viewModelScope.launch(coroutineExceptionHandler) {
 
             val newPhotos = userPhotosUseCase.execute(username, page)
                 .first() //делаем запрос на новые фотографии

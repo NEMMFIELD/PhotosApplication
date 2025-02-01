@@ -76,7 +76,7 @@ class SearchPhotosViewModel @Inject constructor(
     fun loadMorePhotos() {
         if (isLoading || queryFlow.value.isEmpty()) return
         isLoading = true
-        viewModelScope.launch(coroutineExceptionHandler + Dispatchers.IO) {
+        viewModelScope.launch(coroutineExceptionHandler) {
             val newPhotos = searchPhotosUseCase.execute(queryFlow.value, ++page).first()
             if (newPhotos.isNotEmpty()) {
                 val currentPhotos = (_allPhotos.value as? State.Success)?.data ?: emptyList()
